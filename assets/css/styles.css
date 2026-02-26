@@ -8,7 +8,9 @@
   --spacing:16px;
   --container:1200px;
 }
-*{box-sizing:border-box}
+*{box-sizing:border-box;
+padding-left: 1px;
+padding-right: 1px}
 html{font-family:Inter,system-ui,Segoe UI,Roboto,Arial,sans-serif;color:var(--text);line-height:1.45;-webkit-font-smoothing:antialiased}
 body{margin:0;background:var(--bg)}
 .container{max-width:var(--container);margin:0 auto;padding:0 20px}
@@ -106,6 +108,37 @@ input,textarea,select{padding:10px;border-radius:8px;border:1px solid #e6e9ef}
   .pricing-grid{grid-template-columns:1fr}
   .hero-inner{padding:40px 0}
 }
+
+/* Mobile tweaks */
+@media (max-width:480px){
+  :root{--spacing:12px}
+  .container{padding:0 12px}
+  .header-inner{padding:10px 0}
+  .logo{font-size:18px}
+  .hero{min-height:45vh}
+  .hero-inner{padding:28px 0}
+  .hero h1{font-size:22px}
+  .lead{font-size:14px}
+  .about-image{height:220px}
+  .project img{height:160px}
+  .video-grid{grid-template-columns:1fr}
+  .video-card img{height:auto}
+  .btn{width:100%;padding:12px 14px}
+  .nav{left:12px;right:12px;top:56px;min-width:auto}
+  .modal-content{max-width:96%;max-height:94vh}
+  .modal .modal-close{right:8px;top:8px}
+}
+
+/* Improve modal responsiveness on medium screens */
+@media (max-width:900px){
+  .modal-content{max-width:900px}
+}
+
+/* General responsive improvements */
+.container{width:100%;box-sizing:border-box}
+.video-embed, .video-embed iframe{max-width:100%}
+.project img, .video-card img{width:100%;height:auto}
+.pricing-grid .pricing-card{min-height:1px}
 
 @keyframes pop{from{transform:translateY(-6px) scale(.995);opacity:0}to{transform:none;opacity:1}}
 
